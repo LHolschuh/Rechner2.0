@@ -1,0 +1,70 @@
+/* Globale Lightmode-Variablen */
+:root {
+    --light-body-bg: #ffffff; /* Weißer Hintergrund */
+    --light-text-color: #000000; /* Schwarzer Text */
+    --main-border-color: #ccc; /* Heller Rahmen */
+}
+
+/* Grund-Lichtmodus für Körper */
+body, html {
+    background-color: var(--light-body-bg) !important; /* Weißer Hintergrund */
+    color: var(--light-text-color) !important; /* Schwarzer Text */
+    font-family: "Arial", sans-serif; /* Lesbare Schrift */
+    margin: 0;
+    padding: 0;
+}
+
+/* Container/Box mit Rahmen */
+.container, .box {
+    background-color: var(--light-body-bg) !important; /* Weißer Container (Bulma `.box`) */
+    color: var(--light-text-color) !important; /* Schwarzer Text */
+
+    /* Rahmen und Abstand */
+    border: 2px solid var(--main-border-color) !important; /* Rahmenfarbe */
+    border-radius: 8px; /* Abgerundete Ecken */
+    padding: 20px !important; /* Abstand innerhalb */
+    margin: 10px; /* Abstand außerhalb */
+
+    /* Schatten für Dimension (optionales Design) */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Spezielle Button-Farbschemata */
+.button, .custom-color1, .custom-color2 {
+    border: 2px solid var(--main-border-color) !important; /* Rahmen für Bulma-Buttons */
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Sicherstellen, dass Bulma `.box`-Elemente spezielle Behandlung erhalten */
+.box.has-shadow {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15) !important; /* Schatten anpassen */
+    border: 1px solid var(--main-border-color) !important; /* Immer Rahmen anzeigen */
+}
+
+/* Darkmode blockieren: Farben überschreiben */
+@media (prefers-color-scheme: dark) {
+    body, html {
+        background-color: var(--light-body-bg) !important;
+        color: var(--light-text-color) !important;
+    }
+
+    .container, .box {
+        background-color: var(--light-body-bg) !important;
+        color: var(--light-text-color) !important;
+        border: 2px solid var(--main-border-color) !important;
+    }
+
+    .button, .custom-color1, .custom-color2 {
+        border: 2px solid var(--main-border-color) !important;
+    }
+}
+
+/* Sicherheit: Entferne universelle Überschreibungen */
+* {
+    background-color: transparent;
+    color: unset;
+    border: none; /* Keine Rahmen auf universellen Elementen */
+}

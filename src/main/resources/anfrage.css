@@ -1,0 +1,101 @@
+/* Globale Lightmode-Variablen */
+:root {
+    --light-body-bg: #ffffff; /* Hintergrundfarbe */
+    --light-text-color: #000000; /* Textfarbe */
+    --main-border-color: #ccc; /* Rahmenfarbe */
+    --form-border-color: #4CAF50; /* Rahmenfarbe für Formularelemente */
+    --form-focus-color: #6A9033; /* Fokusfarbe für Formulare */
+}
+
+/* Grund-Lichtmodus */
+body, html {
+    background-color: var(--light-body-bg) !important;
+    color: var(--light-text-color) !important;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style für die Anfrage-Container */
+.container, .box {
+    background-color: var(--light-body-bg) !important; /* Heller Hintergrund */
+    color: var(--light-text-color) !important; /* Dunkler Text */
+    border: 2px solid var(--main-border-color) !important;
+    border-radius: 8px; /* Abgerundete Ecken */
+    padding: 20px !important; /* Innenabstand */
+    margin: 15px; /* Außenabstand */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+}
+
+/* Spezifische Formular-Felder im Lightmode */
+input, textarea, select {
+    background-color: var(--light-body-bg) !important; /* Feldhintergrund */
+    color: var(--light-text-color) !important; /* Textfarbe */
+    border: 2px solid var(--form-border-color) !important; /* Grüne Rahmenfarbe */
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%; /* Volle Breite */
+    font-size: 16px;
+    box-sizing: border-box; /* Verhindert Überschreitungen */
+}
+
+/* Formular-Fokus-Effekt */
+input:focus, textarea:focus, select:focus {
+    border-color: var(--form-focus-color) !important; /* Fokus-Grün */
+    box-shadow: 0 0 5px rgba(106, 144, 51, 0.6);
+    outline: none; /* Kein zusätzlicher Fokusrahmen */
+}
+
+/* Lightmode: Buttons */
+button, .button {
+    background-color: var(--form-focus-color) !important; /* Grüner Hintergrund */
+    color: #ffffff !important; /* Weißer Text */
+    border: 2px solid var(--form-focus-color) !important;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+}
+
+button:hover, .button:hover {
+    background-color: #5e7d2c !important; /* Dunkleres Grün beim Hover */
+    border-color: #5e7d2c !important;
+}
+
+/* Hinweisboxen */
+.notification {
+    background-color: #f9f9f9 !important; /* Hellgrauer Hintergrund */
+    color: var(--light-text-color) !important; /* Schwarzer Text */
+    border: 2px solid var(--main-border-color) !important;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px 0;
+}
+
+/* Darkmode blockieren */
+@media (prefers-color-scheme: dark) {
+    body, html {
+        background-color: var(--light-body-bg) !important;
+        color: var(--light-text-color) !important;
+    }
+
+    .container, .box, .notification {
+        border: 2px solid var(--main-border-color) !important;
+        background-color: var(--light-body-bg) !important;
+        color: var(--light-text-color) !important;
+    }
+
+    input, textarea, select, button, .button {
+        background-color: var(--light-body-bg) !important;
+        color: var(--light-text-color) !important;
+        border: 2px solid var(--form-border-color) !important;
+    }
+}
+
+/* Sicherheit: Universale Überschreibungen entfernen */
+* {
+    background-color: transparent;
+    color: inherit;
+    border-color: none;
+}
