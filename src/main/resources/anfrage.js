@@ -69,6 +69,6 @@ console.log(wertImmo);
 
     backButton.addEventListener("click", () => {
         // Weiterleitung zu rechner.html
-        window.location.href = "index.html";
+        window.location.href = "/";
     });
     });
